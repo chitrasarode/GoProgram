@@ -1,0 +1,20 @@
+Correctness: 5/5
+
+Your FizzBuzz program appears to be correct. It follows the specified rules, printing "Fizz" for multiples of 
+three, "Buzz" for multiples of five, and "FizzBuzz" for multiples of both three and five. 
+The else case correctly prints the number for all other cases. Overall, the logic is sound, and the program 
+achieves the desired output.
+
+Complexity: 3/5
+
+In terms of complexity, your implementation is relatively straightforward and easy to understand. It uses a 
+simple loop to iterate from 1 to 100 and uses if-else statements to check the conditions for "Fizz," "Buzz," and 
+"FizzBuzz." While the logic is clear and concise, there's room for improvement in terms of reducing redundancy. 
+For example, the conditions for checking multiples of 3 and 5 could be combined into a single condition for 
+"FizzBuzz," eliminating the need for an additional check in the first if statement. This would make the code 
+slightly more concise. However, the current implementation is still effective and gets the job done.
+
+
+
+
+

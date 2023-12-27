@@ -1,0 +1,39 @@
+Sure, let's evaluate the correctness and complexity of your code.
+
+Correctness (4.5/5):
+Your code is mostly correct and achieves the desired functionality. However, there's a minor improvement that
+ can be made to enhance the user experience.
+
+Positive Aspects:
+
+The random number generation and the loop to prompt the user for guesses are correctly implemented.
+The program correctly provides feedback to the user if their guess is too high or too low.
+The loop breaks when the user guesses the correct number.
+Improvement:
+
+When the user enters a non-numeric value (e.g., a string), your program may not behave as expected. You could add
+ input validation to handle such cases gracefully.
+
+Complexity (3.5/5):
+Your code is relatively simple, but there's room for improvement in terms of code organization and handling edge 
+cases.
+
+Positive Aspects:
+
+The code is straightforward and easy to understand, making it suitable for learners.
+Proper use of a loop for repeated prompts until the correct guess.
+Areas for Improvement:
+
+Input validation: Adding input validation to ensure the user enters a valid number would make your program more
+ robust.
+You could consider breaking down your code into functions to enhance readability and maintainability.
+While the simplicity is good for a basic program, you might want to explore more advanced features or error
+ handling as you progress.
+Overall Rating:
+Your code is solid and achieves the core functionality. Consider incorporating input validation and organizing
+ your code into functions to further improve its structure and robustness. Great job overall!
+
+
+
+
+
