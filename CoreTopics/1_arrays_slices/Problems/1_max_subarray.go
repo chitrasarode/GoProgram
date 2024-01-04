@@ -22,7 +22,7 @@ func main() {
 	// mySlice := arr1[1:4]
 	// fmt.Println("Length of mySlice = ", len(mySlice), "\nCapacity of my slice = ", cap(mySlice))
 
-	arr := [9]int{-2, 1, -3, 4, -1, 2, 1, 5, 9}
+	arr := [9]int{-2, 1, -3, 4, -1, 2, 1, -5, 4}
 	maxSum := arr[0]
 	sum := arr[0]
 	fmt.Println("Array is : ", arr)
@@ -40,8 +40,7 @@ func main() {
 	var end int
 	for i := 1; i < len(arr); i++ {
 
-		sum = arr[i] + sum
-		if arr[i] > sum {
+		if arr[i] > sum+arr[i] {
 			sum = arr[i]
 			tempStart = i
 		} else {

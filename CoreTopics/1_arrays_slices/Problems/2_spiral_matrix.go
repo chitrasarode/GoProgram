@@ -56,24 +56,51 @@ func main() {
 		}
 		fmt.Println()
 	}
+
+	spiralMatrix := spiral_Matrix(matrix)
+	fmt.Println("SpiralSlice : ", spiralMatrix)
+}
+
+func spiral_Matrix(matrix [][]int) []int {
 	var right int
 	var bottom int
-
+	var top int
+	var m = len(matrix)
+	var n = len(matrix[0])
+	spiralSlice := []int{}
+	//var top int
 	//spiral order traversal of this matrix
 	for i := 0; i < m; i++ {
 		if right == n-1 {
+			spiralSlice = append(spiralSlice, matrix[i][right])
 			fmt.Print(matrix[i][right], ",")
 			bottom = m - 1
 			if bottom == i {
 				for j := n - 2; j >= 0; j-- {
+					spiralSlice = append(spiralSlice, matrix[i][j])
 					fmt.Print(matrix[i][j], ",")
+					top = 0
+				}
+				if top == 0 {
+					for i := n - 2; i > 0; i-- {
+						spiralSlice = append(spiralSlice, matrix[i][top])
+						fmt.Print(matrix[i][top], ",")
+					}
 				}
 			}
 			continue
 		}
 		for j := 0; j < n; j++ {
+			spiralSlice = append(spiralSlice, matrix[i][j])
 			fmt.Print(matrix[i][j], ",")
 			right = n - 1
 		}
 	}
+	// innerMatrix := make([][]int, len(matrix)-2)
+
+	// fmt.Println(innerMatrix)
+	// if len(innerMatrix) < 2 {
+	// 	return spiralSlice
+	// }
+	return spiralSlice
 }
