@@ -12,11 +12,11 @@ func main() {
 
 	for {
 		fmt.Println("*****Calculator App*****")
-		fmt.Println("1.Addition\n2.Subtraction\n3.Multiplication\n4.Division")
+		fmt.Println("1.Addition\n2.Subtraction\n3.Multiplication\n4.Division\n5.Exit")
 		fmt.Println("Enter your choice")
 		fmt.Scan(&ch)
 
-		if ch != 1 && ch != 2 && ch != 3 && ch != 4 {
+		if ch < 1 || ch > 5 {
 			fmt.Println("Enter correct choice")
 			continue
 		}
@@ -29,14 +29,28 @@ func main() {
 
 		switch ch {
 		case 1:
-			fmt.Println("Addition of two numbers : ", calci.Addition(num1, num2))
-		case 2:
-			calci.Subtraction(num1, num2)
-		case 3:
-			calci.Multiplication(num1, num2)
+			result, err := calci.Addition(num1, num2)
+			if err != nil {
+				fmt.Println("Error : ", err)
+			}
+			fmt.Println("Addition of two numbers : ", result)
+		// case 2:
+		// 	result, err := calci.Subtraction(num1, num2)
+		// 	if err != nil {
+		// 		fmt.Println("Error : ", err)
+		// 	}
+		// 	fmt.Println("Subtraction of two numbers : ", result)
+
+		// case 3:
+		// 	result, err := calci.Multiplication(num1, num2)
+		// 	if err != nil {
+		// 		fmt.Println("Error : ", err)
+		// 	}
+		// 	fmt.Println("Subtraction of two numbers : ", result)
+
 		case 4:
-			calci.Division(num1, num2)
-		default:
+			//calci.Division(num1, num2)
+		case 5:
 			os.Exit(1)
 		}
 	}

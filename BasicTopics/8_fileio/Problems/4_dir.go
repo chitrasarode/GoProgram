@@ -6,29 +6,26 @@ package main
 import (
 	"fmt"
 	"os"
+	"path/filepath"
 )
 
 func main() {
-	files, err := os.ReadDir(".")
+
+	path := `C:\Users\Admin\Documents\GoLang\Go_Programs\GoProgram\BasicTopics`
+	createFileTree(path, " ")
+
+}
+func createFileTree(path string, indent string) {
+	file, err := os.ReadDir(path)
 	if err != nil {
-		fmt.Println("Error reading directories")
+		fmt.Println(err)
 		return
 	}
 
-	for _, file := range files {
-		if file.IsDir() {
-			fmt.Println(file.Name())
-			subDir, err := os.ReadDir(file.Name())
-			if err != nil {
-				fmt.Println("Error reading directories : ", err)
-				return
-			}
-			for _, file := range subDir {
-				fmt.Println("  ", file.Name())
-			}
-
-		} else {
-			fmt.Println(file.Name())
+	for _, files := range file {
+		fmt.Println(indent + files.Name())
+		if files.IsDir() {
+			createFileTree(filepath.Join(path, files.Name()), indent+"  ")
 		}
 	}
 }
