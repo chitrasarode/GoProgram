@@ -19,17 +19,33 @@ package main
 
 import (
 	"fmt"
+	"sort"
+	"strings"
 )
 
 func main() {
 	fmt.Println("-----Find all anagrams in string-----")
-	s := "cbaebabacd"
-	p := "abc"
+	s := "cbaebabacdbacb"
+	p := "cba"
+	p = sortString(p)
+	var indices []int
+	var subStr []string
 
-	byteSlice := []byte(s)
-	fmt.Println(len(p), len(s))
-	fmt.Printf("%c", byteSlice[0])
-	for i, v := range s {
-
+	for i := 0; i <= len(s)-3; i++ {
+		subStr = append(subStr, s[i:i+3])
+		subStr[i] = sortString(subStr[i])
+		if subStr[i] == p {
+			indices = append(indices, i)
+		}
 	}
+	fmt.Println("All possible anagram starting indices : ", indices)
+}
+
+func sortString(s string) string {
+	//abcdef
+	s = strings.ReplaceAll(strings.ToLower(s), " ", "")
+	char := strings.Split(s, "")
+	sort.Strings(char)
+	s = strings.Join(char, "")
+	return s
 }
