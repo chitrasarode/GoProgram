@@ -6,8 +6,7 @@ import (
 
 func main() {
 	fmt.Println("------Bubble Sort-----")
-
-	arr := []string{"c", "a", "A", "d"}
+	arr := []string{"c", "a", "A", "D"}
 	fmt.Printf("Array : %T\n", arr)
 
 	arr1 := bubbleSort(arr)
